@@ -5,13 +5,19 @@ function Article(props){
   
   return (
   	<div>
-      <h2 className="top-1" style={{color:"red"}}>{article.title}</h2>
+      <h2 className="top-1" style={{color:"red"}}>
+      {article.title}
+      <button onClick={handleClick}>Close</button>
+      </h2>
       {body}
       <h3>
-        creation date:{(new Date(article.date)).toDateString()}
+        creation date: {(new Date()).toDateString()}
       </h3>
     </div>
   )
 
+}
+function handleClick(){
+    console.log('----','clicked')
 }
 export default Article
