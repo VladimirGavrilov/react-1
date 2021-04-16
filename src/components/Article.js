@@ -6,6 +6,7 @@ class Article extends Component{
         this.state = {
             isOpen: true
         }
+         
 
     }
     render(){        
@@ -15,9 +16,12 @@ class Article extends Component{
         return (
             <div>
                 <h2 className="top-1" style={{color:"red"}}>
-                    {article.title}
-                    <button onClick={handleClick}>Close</button>
+                    {article.title} 
+                    
                 </h2>
+                <button onClick={this.handleClick}>
+                    {this.state.isOpen ? "Закрыть" : "Открыть"  }
+                    </button>
                 {body}
                 <h3>
                     creation date: {(new Date()).toDateString()}
@@ -26,11 +30,15 @@ class Article extends Component{
         )
 
         }
+        handleClick = () => {
+             console.log('----','clicked')
+             this.setState({
+                 isOpen: !this.state.isOpen
+             })
+        }
 }
  
 
 
-function handleClick(){
-    console.log('----','clicked')
-}
+ 
 export default Article
