@@ -5,8 +5,7 @@ export default function ArticleList({articles}) {
          <li key = {article.id}><Article article = {article}/></li>)
     return (
         <ul>
-            {articleElements}
-            
+            {articleElements}            
         </ul>
     )
 
