@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "bootstrap/dist/css/bootstrap.css"
 
 class Article extends Component{
     constructor(props){
@@ -19,7 +20,7 @@ class Article extends Component{
                     {article.title} 
                     
                 </h2>
-                <button onClick={this.handleClick}>
+                <button className="bg-warning text-white" onClick={this.handleClick}>
                     {this.state.isOpen ? "Закрыть" : "Открыть"  }
                     </button>
                 {body}
